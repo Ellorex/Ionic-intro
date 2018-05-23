@@ -7,8 +7,21 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  C'est parti mon kiki
+  <div>
+    <button ion-button (click)="btnTest()">Test</button> {{message}}
+  </div>
+  <div>
+    <button ion-button (click)="goToNewPlace()">Ajouter un lieu</button>
+  </div>
+  <h2>Lieux enregistrés</h2>
+  <ion-list>
+    <ion-item *ngFor="let place of places">
+      <ion-thumbnail item-start>
+        <img class="picto" src="/assets/imgs/picto-light.png" alt="">
+      </ion-thumbnail>
+      <p>{{place}}</p>
+      <button ion-button item-end>Détails</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
